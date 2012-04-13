@@ -1,83 +1,50 @@
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
 Titanium.UI.setBackgroundColor('#000');
 
-// create tab group
-var tabGroup = Titanium.UI.createTabGroup();
+// load parameters
+Ti.include('/lib/initialize.js');
+var dic = {};
 
+// require database components
+var joliBase = require('lib/vendor/joli').connect(Titanium.App.Properties.getString('database_name'));
+var joliApi = require('lib/vendor/joli.api');
+dic.joli = new joliApi(joliBase);
 
-//
-// create base UI tab and root window
-//
-var winHome = Titanium.UI.createWindow({
-    title:'Home',
-    backgroundColor:'#fff',
-    orientationModes:
-    [
-		Titanium.UI.PORTRAIT,
-		Titanium.UI.UPSIDE_PORTRAIT
-	],
-	url: 'home.js',
-});
+var Model = require('lib/model/Model');
+var model = new Model(dic);
+dic.joli.models.initialize();
 
-var tabHome = Titanium.UI.createTab({
-    icon:'images/icon_home.png',
-    title:'Home',
-    window:winHome,
-});
+// in debug we want to make some cleanup when launching the app...
+/*  dic.joli.models.get('country').truncate();
+    dic.joli.models.get('table_updates').truncate();
 
-//
-// create controls tab and root window
-//
-var winLucky = Titanium.UI.createWindow({  
-    title:'I\'m feeling lucky',
-    backgroundColor:'#fff'
-});
-var tabLucky = Titanium.UI.createTab({  
-    icon:'images/icon_lucky.png',
-    title:'Feelin\' lucky',
-    window:winLucky
-});
+    dic.joli.models.get('country').forceReload();
+*/
 
-var label2 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 2',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
-});
+/*var joli = require('/lib/joli').connect('winespeechDB');
+var joliApi = require('/lib/joli.api');
+Ti.include('/lib/models.js');
+joli.models.initialize();
 
-winLucky.add(label2);
+var lastUpdatedTS = Titanium.App.Properties.getInt('lastUpdatedTS');
+if (lastUpdatedTS == null || lastUpdatedTS < 1291208400) {
+	lastUpdatedTS = 1291208400;
+	Ti.App.Properties.setInt('lastUpdatedTS', 1291208400 );
+}*/
 
-//
-// create controls tab and root window
-//
-var winAbout = Titanium.UI.createWindow({  
-    title:'Asian Palate',
-    backgroundColor:'#fff'
-});
-var tabAbout = Titanium.UI.createTab({  
-    icon:'images/icon_about.png',
-    title:'Asian Palate',
-    window:winLucky
-});
+//load the helper functions
+var Helper = require('lib/Helper');
+dic.helper = new Helper(dic);
+dic.activityIndicator;
 
-var label2 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 3',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
-});
+//require and open top level UI component
+var TabGroup = require('ui/TabGroup');
+dic.tabGroup = new TabGroup(dic, 0);
 
-winAbout.add(label2);
-
-//
-//  add tabs
-//
-tabGroup.addTab(tabHome);  
-tabGroup.addTab(tabLucky);  
-tabGroup.addTab(tabAbout);
-
-
-// open tab group
-tabGroup.open();
+if(Titanium.Platform.name != 'android') {
+    dic.tabGroup.open({
+        transition: Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+    });
+} else {
+    dic.tabGroup.open();
+}

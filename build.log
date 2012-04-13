@@ -1,37 +1,13 @@
 Logfile initialized
 [INFO] logfile = D:\Documents\Titanium\WineSpeech\build.log
-[DEBUG] C:\Users\Frederik\AppData\Roaming\Titanium\mobilesdk\win32\2.0.0.v20120225104635\android\builder.py simulator WineSpeech C:\Android\android-sdk D:\Documents\Titanium\WineSpeech com.asianpalate.winespeech 16 WVGA854
+[DEBUG] C:\Users\Frederik\AppData\Roaming\Titanium\mobilesdk\win32\1.8.2\android\builder.py simulator WineSpeech C:\Android\android-sdk D:\Documents\Titanium\WineSpeech com.asianpalate.winespeech 8 WVGA854
 [INFO] Building WineSpeech for Android ... one moment
-[INFO] Titanium SDK version: 2.0.0 (02/25/12 10:46 da5c153)
+[INFO] Titanium SDK version: 1.8.2 (02/23/12 17:46 59b3a90)
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 0 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[DEBUG] Device connected... (waited 35 seconds)
-[DEBUG] waited 35.128000 seconds on emulator to get ready
-[INFO] Waiting for the Android Emulator to become available
-[DEBUG] com.asianpalate.winespeech installed? True
-[INFO] Fastdev server running, deploying in Fastdev mode
-[INFO] Copying project resources..
-[INFO] Tiapp.xml unchanged, skipping class generation
-[DEBUG] Processing Android resource drawables
-[DEBUG] found drawable-long-land-hdpi splash screen at D:\Documents\Titanium\WineSpeech\Resources\android\images\res-long-land-hdpi\default.png
-[DEBUG] found drawable-long-land-ldpi splash screen at D:\Documents\Titanium\WineSpeech\Resources\android\images\res-long-land-ldpi\default.png
-[DEBUG] found drawable-long-port-hdpi splash screen at D:\Documents\Titanium\WineSpeech\Resources\android\images\res-long-port-hdpi\default.png
-[DEBUG] found drawable-long-port-ldpi splash screen at D:\Documents\Titanium\WineSpeech\Resources\android\images\res-long-port-ldpi\default.png
-[DEBUG] found drawable-notlong-land-hdpi splash screen at D:\Documents\Titanium\WineSpeech\Resources\android\images\res-notlong-land-hdpi\default.png
-[DEBUG] found drawable-notlong-land-ldpi splash screen at D:\Documents\Titanium\WineSpeech\Resources\android\images\res-notlong-land-ldpi\default.png
-[DEBUG] found drawable-notlong-land-mdpi splash screen at D:\Documents\Titanium\WineSpeech\Resources\android\images\res-notlong-land-mdpi\default.png
-[DEBUG] found drawable-notlong-port-hdpi splash screen at D:\Documents\Titanium\WineSpeech\Resources\android\images\res-notlong-port-hdpi\default.png
-[DEBUG] found drawable-notlong-port-ldpi splash screen at D:\Documents\Titanium\WineSpeech\Resources\android\images\res-notlong-port-ldpi\default.png
-[DEBUG] found drawable-notlong-port-mdpi splash screen at D:\Documents\Titanium\WineSpeech\Resources\android\images\res-notlong-port-mdpi\default.png
-[INFO] Waiting for SDCard to become available..
-[INFO] Re-launching application ... WineSpeech
-[INFO] Launching application ... WineSpeech
-[TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.asianpalate.winespeech/.WinespeechActivity }
-
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[ERROR] Timed out waiting for emulator to be ready, you may need to close the emulator and try again

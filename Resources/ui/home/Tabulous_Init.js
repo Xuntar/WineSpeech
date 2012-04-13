@@ -1,8 +1,5 @@
-
-
-var win = Ti.UI.currentWindow;
-
-
+var ScreenHeight = Titanium.Platform.displayCaps.platformHeight;
+var ScreenWidth = Titanium.Platform.displayCaps.platformWidth;
 
 //////////////////////////////CONTROL PANEL///////////////////////////
 
