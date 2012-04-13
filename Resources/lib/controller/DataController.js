@@ -1,5 +1,5 @@
 function DataController(dic) {
-	//var joli = dic.joli;
+	var joli = dic.joli;
 	var models = dic.joli.models.get();
 	var self = {};
 	
@@ -26,7 +26,7 @@ function DataController(dic) {
 			dataRows.push(row);
 		});
 		
-		tableview.setData(data);
+		tableview.setData(dataRows);
 	};
 	
 	return self;

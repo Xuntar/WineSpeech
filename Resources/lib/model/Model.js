@@ -25,7 +25,7 @@ function Model(dic) {
         return this.get('firstname') + ' ' + this.get('lastname');
       }
     },*/
-    url: 'https://xuntar.com/winespeech/index.php?r=country/getcountries'
+    url: 'http://146.255.37.38/winespeech/index.php?r=country/getcountries'
   });
 
   // table_updates model (required by joliapi)
