@@ -3,7 +3,13 @@ function DataController(dic) {
 	var models = dic.joli.models.get();
 	var self = {};
 	
+	var DataRow = require('ui/row/Data');
+	
+	var loadingRow = new DataRow(dic, {id: 0, name: 'Loading...'}, {});
+	var loadingData = [loadingRow];
+	
 	self.update = function(tableview, table) {
+		tableview.setData(loadingData);
 		var model = models[table]; //dic.joli.models.get(table);
 		//Ti.API.info('model: ' + model);
 		var dataList = model.all({
@@ -19,7 +25,6 @@ function DataController(dic) {
 		}
 		
 		var dataRows = [];
-		var DataRow = require('ui/row/Data');
 		
 		joli.each(dataList, function(data, id) {
 			var row = new DataRow(dic, data, {});
@@ -28,6 +33,13 @@ function DataController(dic) {
 		
 		tableview.setData(dataRows);
 	};
+	
+	/*self.showPlayer = function(id) {
+        var PlayerWindow = require('ui/player/PlayerView');
+        dic.tabGroup.activeTab.open(new PlayerView(dic, id), {
+            animated: true
+        });
+    };*/
 	
 	return self;
 }
